@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnc4dnrh8e3qr"]
+
+[ext_resource type="PackedScene" uid="uid://bi1nmkmr127se" path="res://Scenes/CollectableUI.tscn" id="1_4mtlh"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="RichTextLabel" parent="." instance=ExtResource("1_4mtlh")]
