@@ -14,3 +14,7 @@ config/name="GameJamPixel"
 run/main_scene="res://Scenes/test_bed.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://sprites/icon.svg"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

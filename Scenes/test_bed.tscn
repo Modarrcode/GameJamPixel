@@ -1,46 +1,58 @@
 [gd_scene load_steps=4 format=3 uid="uid://bv6phmuut3751"]
 
 [ext_resource type="PackedScene" uid="uid://bway00g0kh8ko" path="res://Scenes/Collectable.tscn" id="1_e64ua"]
-[ext_resource type="PackedScene" uid="uid://bi1nmkmr127se" path="res://Scenes/CollectableUI.tscn" id="2_xc0h3"]
 [ext_resource type="PackedScene" uid="uid://c1s256putrtmj" path="res://Scenes/playerCharacter.tscn" id="3_ps48s"]
+[ext_resource type="PackedScene" uid="uid://cb6d6snc86wso" path="res://Scenes/UI.tscn" id="4_xiorm"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Node2D" parent="." instance=ExtResource("3_ps48s")]
+position = Vector2(578, 325)
+
+[node name="Node2D2" parent="." instance=ExtResource("4_xiorm")]
+position = Vector2(49, 14)
 
 [node name="Area2D" parent="." instance=ExtResource("1_e64ua")]
-position = Vector2(346, -36)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="RichTextLabel" parent="CanvasLayer" instance=ExtResource("2_xc0h3")]
+position = Vector2(688, 144)
 
 [node name="Area2D2" parent="." instance=ExtResource("1_e64ua")]
-position = Vector2(241, 192)
+position = Vector2(710, 288)
 
 [node name="Area2D3" parent="." instance=ExtResource("1_e64ua")]
-position = Vector2(185, 81)
+position = Vector2(855, 195)
 
 [node name="Area2D4" parent="." instance=ExtResource("1_e64ua")]
-position = Vector2(459, 77)
+position = Vector2(429, 463)
 
 [node name="Area2D5" parent="." instance=ExtResource("1_e64ua")]
-position = Vector2(387, 255)
+position = Vector2(587, 82)
 
 [node name="Area2D6" parent="." instance=ExtResource("1_e64ua")]
-position = Vector2(335, 91)
+position = Vector2(362, 286)
 
 [node name="Area2D7" parent="." instance=ExtResource("1_e64ua")]
-position = Vector2(142, 254)
+position = Vector2(588, 498)
 
 [node name="Area2D8" parent="." instance=ExtResource("1_e64ua")]
-position = Vector2(461, 183)
+position = Vector2(789, 481)
 
-[connection signal="collected" from="Area2D" to="CanvasLayer/RichTextLabel" method="_on_area_2d_collected"]
-[connection signal="collected" from="Area2D2" to="CanvasLayer/RichTextLabel" method="_on_area_2d_collected"]
-[connection signal="collected" from="Area2D3" to="CanvasLayer/RichTextLabel" method="_on_area_2d_collected"]
-[connection signal="collected" from="Area2D4" to="CanvasLayer/RichTextLabel" method="_on_area_2d_collected"]
-[connection signal="collected" from="Area2D5" to="CanvasLayer/RichTextLabel" method="_on_area_2d_collected"]
-[connection signal="collected" from="Area2D6" to="CanvasLayer/RichTextLabel" method="_on_area_2d_collected"]
-[connection signal="collected" from="Area2D7" to="CanvasLayer/RichTextLabel" method="_on_area_2d_collected"]
-[connection signal="collected" from="Area2D8" to="CanvasLayer/RichTextLabel" method="_on_area_2d_collected"]
+[node name="Area2D9" parent="." instance=ExtResource("1_e64ua")]
+position = Vector2(749, 165)
+
+[node name="Area2D10" parent="." instance=ExtResource("1_e64ua")]
+position = Vector2(617, 193)
+
+[node name="Area2D11" parent="." instance=ExtResource("1_e64ua")]
+position = Vector2(832, 311)
+
+[connection signal="collected" from="Area2D" to="Node2D2" method="_on_area_2d_collected"]
+[connection signal="collected" from="Area2D2" to="Node2D2" method="_on_area_2d_collected"]
+[connection signal="collected" from="Area2D3" to="Node2D2" method="_on_area_2d_collected"]
+[connection signal="collected" from="Area2D4" to="Node2D2" method="_on_area_2d_collected"]
+[connection signal="collected" from="Area2D5" to="Node2D2" method="_on_area_2d_collected"]
+[connection signal="collected" from="Area2D6" to="Node2D2" method="_on_area_2d_collected"]
+[connection signal="collected" from="Area2D7" to="Node2D2" method="_on_area_2d_collected"]
+[connection signal="collected" from="Area2D8" to="Node2D2" method="_on_area_2d_collected"]
+[connection signal="collected" from="Area2D9" to="Node2D2" method="_on_area_2d_collected"]
+[connection signal="collected" from="Area2D10" to="Node2D2" method="_on_area_2d_collected"]
+[connection signal="collected" from="Area2D11" to="Node2D2" method="_on_area_2d_collected"]
