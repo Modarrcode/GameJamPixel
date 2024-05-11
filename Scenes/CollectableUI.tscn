@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bi1nmkmr127se"]
+
+[ext_resource type="Script" path="res://Scripts/CollectableUI.gd" id="1_85ecy"]
+
+[node name="RichTextLabel" type="RichTextLabel"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_85ecy")
