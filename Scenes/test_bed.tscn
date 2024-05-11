@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bv6phmuut3751"]
+[gd_scene load_steps=4 format=3 uid="uid://bv6phmuut3751"]
 
-[ext_resource type="PackedScene" uid="uid://bway00g0kh8ko" path="res://Scenes/Collectable.tscn" id="1_e64ua"]
+[ext_resource type="PackedScene" uid="uid://bway00g0kh8ko" path="res://Scenes/collectable.tscn" id="1_e64ua"]
 [ext_resource type="PackedScene" uid="uid://bi1nmkmr127se" path="res://Scenes/CollectableUI.tscn" id="2_xc0h3"]
+[ext_resource type="PackedScene" uid="uid://c1s256putrtmj" path="res://Scenes/playerCharacter.tscn" id="3_ps48s"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -46,6 +47,8 @@ position = Vector2(504, 393)
 
 [node name="Area2D12" parent="." instance=ExtResource("1_e64ua")]
 position = Vector2(779, 252)
+
+[node name="Node2D" parent="." instance=ExtResource("3_ps48s")]
 
 [connection signal="collected" from="Area2D" to="RichTextLabel" method="_on_area_2d_collected"]
 [connection signal="collected" from="Area2D2" to="RichTextLabel" method="_on_area_2d_collected"]
