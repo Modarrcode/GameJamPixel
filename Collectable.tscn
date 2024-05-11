@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://r12ff5s61cyy"]
-
-[ext_resource type="Script" path="res://CollectableComponent.gd" id="1_yhpvy"]
-
-[node name="Node" type="Node"]
-script = ExtResource("1_yhpvy")
