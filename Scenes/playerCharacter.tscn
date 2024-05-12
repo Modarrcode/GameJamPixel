@@ -1,10 +1,65 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1s256putrtmj"]
+[gd_scene load_steps=8 format=3 uid="uid://c1s256putrtmj"]
 
 [ext_resource type="Script" path="res://Scripts/CharacterBody2D.gd" id="1_pndie"]
-[ext_resource type="Texture2D" uid="uid://cr8jhg2sqxp6d" path="res://sprites/testplayer sprite.png" id="2_qtsyg"]
+[ext_resource type="Texture2D" uid="uid://daynv5v1spm18" path="res://sprites/Player.png" id="2_or04f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tq3b0"]
-size = Vector2(53, 112.25)
+size = Vector2(44, 56)
+
+[sub_resource type="Animation" id="Animation_byp7i"]
+resource_name = "player_idle"
+length = 1.5
+loop_mode = 1
+step = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(1, 0), Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_m0nh4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_oo2rs"]
+resource_name = "run"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nhapg"]
+_data = {
+"RESET": SubResource("Animation_m0nh4"),
+"player_idle": SubResource("Animation_byp7i"),
+"run": SubResource("Animation_oo2rs")
+}
 
 [node name="Node2D3" type="Node2D"]
 
@@ -14,8 +69,16 @@ script = ExtResource("1_pndie")
 [node name="Camera2D" type="Camera2D" parent="player"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-position = Vector2(0.5, 1.125)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_tq3b0")
 
 [node name="Sprite2D" type="Sprite2D" parent="player"]
-texture = ExtResource("2_qtsyg")
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_or04f")
+hframes = 2
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="player"]
+libraries = {
+"": SubResource("AnimationLibrary_nhapg")
+}

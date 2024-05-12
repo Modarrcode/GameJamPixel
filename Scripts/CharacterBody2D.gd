@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 const MOTION_SPEED = 160 # Pixels/second.
+@onready var animationPlayer = $AnimationPlayer
 
 
 func _physics_process(_delta):
@@ -12,3 +13,10 @@ func _physics_process(_delta):
 	#warning-ignore:return_value_discarded
 	set_velocity(motion)
 	move_and_slide()
+	handleAnimations(motion)
+
+func handleAnimations(motion):
+	if(motion == Vector2.ZERO):
+		animationPlayer.play("player_idle")
+	else:
+		animationPlayer.play("run")
