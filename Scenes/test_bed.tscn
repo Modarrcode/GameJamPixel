@@ -1,49 +1,48 @@
 [gd_scene load_steps=4 format=3 uid="uid://bv6phmuut3751"]
 
 [ext_resource type="PackedScene" uid="uid://bway00g0kh8ko" path="res://Scenes/Collectable.tscn" id="1_e64ua"]
-[ext_resource type="PackedScene" uid="uid://c1s256putrtmj" path="res://Scenes/playerCharacter.tscn" id="3_ps48s"]
+[ext_resource type="PackedScene" uid="uid://cyit45nncepu1" path="res://Scenes/Test lvl.tscn" id="1_em8w0"]
 [ext_resource type="PackedScene" uid="uid://cb6d6snc86wso" path="res://Scenes/UI.tscn" id="4_xiorm"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Node2D" parent="." instance=ExtResource("3_ps48s")]
-position = Vector2(578, 325)
+[node name="Node2D3" parent="." instance=ExtResource("1_em8w0")]
 
 [node name="Node2D2" parent="." instance=ExtResource("4_xiorm")]
 position = Vector2(49, 14)
 
 [node name="Area2D" parent="." instance=ExtResource("1_e64ua")]
-position = Vector2(688, 144)
+position = Vector2(476, 345)
 
 [node name="Area2D2" parent="." instance=ExtResource("1_e64ua")]
-position = Vector2(710, 288)
+position = Vector2(724, 319)
 
 [node name="Area2D3" parent="." instance=ExtResource("1_e64ua")]
-position = Vector2(855, 195)
+position = Vector2(676, 294)
 
 [node name="Area2D4" parent="." instance=ExtResource("1_e64ua")]
-position = Vector2(429, 463)
+position = Vector2(624, 421)
 
 [node name="Area2D5" parent="." instance=ExtResource("1_e64ua")]
-position = Vector2(587, 82)
+position = Vector2(531, 321)
 
 [node name="Area2D6" parent="." instance=ExtResource("1_e64ua")]
-position = Vector2(362, 286)
+position = Vector2(576, 396)
 
 [node name="Area2D7" parent="." instance=ExtResource("1_e64ua")]
-position = Vector2(588, 498)
+position = Vector2(671, 400)
 
 [node name="Area2D8" parent="." instance=ExtResource("1_e64ua")]
-position = Vector2(789, 481)
+position = Vector2(732, 373)
 
 [node name="Area2D9" parent="." instance=ExtResource("1_e64ua")]
-position = Vector2(749, 165)
+position = Vector2(677, 347)
 
 [node name="Area2D10" parent="." instance=ExtResource("1_e64ua")]
-position = Vector2(617, 193)
+position = Vector2(519, 374)
 
 [node name="Area2D11" parent="." instance=ExtResource("1_e64ua")]
-position = Vector2(832, 311)
+position = Vector2(777, 351)
 
 [connection signal="collected" from="Area2D" to="Node2D2" method="_on_area_2d_collected"]
 [connection signal="collected" from="Area2D2" to="Node2D2" method="_on_area_2d_collected"]
