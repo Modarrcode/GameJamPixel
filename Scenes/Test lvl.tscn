@@ -3,11 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://so2ve33ai575" path="res://Scenes/isotest.tscn" id="1_sf33t"]
 [ext_resource type="PackedScene" uid="uid://c1s256putrtmj" path="res://Scenes/playerCharacter.tscn" id="2_q215b"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="TileMap" parent="." instance=ExtResource("1_sf33t")]
 position = Vector2(327, 319)
 layer_0/tile_data = PackedInt32Array(-262143, 65536, 3, -196607, 65536, 3, -131071, 65536, 3, -65535, 65536, 3, -262142, 65536, 3, -196606, 65536, 3, -131070, 65536, 3, -65534, 65536, 3, -262141, 65536, 3, -196605, 65536, 3, -131069, 65536, 3, -65533, 65536, 3, -262140, 65536, 3, -196604, 65536, 3, -131068, 65536, 3, -65532, 65536, 3)
 
 [node name="Node2D" parent="." instance=ExtResource("2_q215b")]
-position = Vector2(1040, 448)
+position = Vector2(614, 297)
