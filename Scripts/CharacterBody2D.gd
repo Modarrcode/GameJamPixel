@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const MOTION_SPEED = 160 # Pixels/second.
 @onready var animationPlayer = $AnimationPlayer
+@export var respawnCoordinates: Vector2
 
 
 func _physics_process(_delta):
@@ -20,3 +21,10 @@ func handleAnimations(motion):
 		animationPlayer.play("player_idle")
 	else:
 		animationPlayer.play("run")
+
+
+
+func _on_kill_area_in_death_area():
+	self.position = respawnCoordinates;
+	print("die, gameover, death animation, what have you")
+	pass # Replace with function body.

@@ -1,12 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://bv6phmuut3751"]
+[gd_scene load_steps=6 format=3 uid="uid://bv6phmuut3751"]
 
 [ext_resource type="PackedScene" uid="uid://bway00g0kh8ko" path="res://Scenes/Collectable.tscn" id="1_e64ua"]
-[ext_resource type="PackedScene" uid="uid://cyit45nncepu1" path="res://Scenes/Test lvl.tscn" id="1_em8w0"]
+[ext_resource type="PackedScene" uid="uid://so2ve33ai575" path="res://Scenes/isotest.tscn" id="1_svkxu"]
+[ext_resource type="PackedScene" uid="uid://cjwv35xl0mnw1" path="res://Scenes/Player.tscn" id="2_u2uij"]
 [ext_resource type="PackedScene" uid="uid://cb6d6snc86wso" path="res://Scenes/UI.tscn" id="4_xiorm"]
+[ext_resource type="PackedScene" uid="uid://dglsefrsuyojj" path="res://Scenes/kill_area.tscn" id="5_w5v1u"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Node2D3" parent="." instance=ExtResource("1_em8w0")]
+[node name="TileMap2" parent="." instance=ExtResource("1_svkxu")]
+position = Vector2(650.656, 377.488)
+layer_0/tile_data = PackedInt32Array(-131076, 65537, 3, -131075, 65537, 3, -131074, 65537, 3, -131073, 65537, 3, -196608, 65537, 3, 131072, 65537, 3, 131073, 65537, 3, 196609, 65537, 3, 196607, 65537, 3, 196606, 65537, 3, 196605, 65537, 3, 196604, 65537, 3, 131068, 65537, 3, 65532, 65537, 3, -4, 65537, 3, -65540, 65537, 3, -131071, 65537, 3, -65535, 65537, 3, 1, 65537, 3, 65537, 65537, 3, -196607, 65537, 3, 196608, 65537, 3, 262143, 65537, 3, 262142, 65537, 3, 262141, 65537, 3, 262140, 65537, 3, 131069, 65536, 3, 131070, 65536, 3, 131071, 65536, 3, -1, 65536, 3, -65537, 65536, 3, -65538, 65536, 3, -65539, 65536, 3, -3, 65536, 3, 65533, 65536, 3, 65534, 65536, 3, -2, 65536, 3, 65535, 65536, 3, 65536, 65536, 3, 0, 65536, 3, -65536, 65536, 3, -131072, 65536, 3)
+
+[node name="player" parent="." instance=ExtResource("2_u2uij")]
+position = Vector2(619, 316)
+respawnCoordinates = Vector2(600, 355)
 
 [node name="Node2D2" parent="." instance=ExtResource("4_xiorm")]
 position = Vector2(49, 14)
@@ -44,6 +52,12 @@ position = Vector2(519, 374)
 [node name="Area2D11" parent="." instance=ExtResource("1_e64ua")]
 position = Vector2(777, 351)
 
+[node name="KillArea" parent="." instance=ExtResource("5_w5v1u")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KillArea"]
+position = Vector2(16, -4)
+polygon = PackedVector2Array(640, 245, 427, 350, 439, 366, 627, 468, 854, 353, 634, 239, 651, 203, 949, 351, 601, 528, 287, 383, 650, 203)
+
 [connection signal="collected" from="Area2D" to="Node2D2" method="_on_area_2d_collected"]
 [connection signal="collected" from="Area2D2" to="Node2D2" method="_on_area_2d_collected"]
 [connection signal="collected" from="Area2D3" to="Node2D2" method="_on_area_2d_collected"]
@@ -55,3 +69,4 @@ position = Vector2(777, 351)
 [connection signal="collected" from="Area2D9" to="Node2D2" method="_on_area_2d_collected"]
 [connection signal="collected" from="Area2D10" to="Node2D2" method="_on_area_2d_collected"]
 [connection signal="collected" from="Area2D11" to="Node2D2" method="_on_area_2d_collected"]
+[connection signal="inDeathArea" from="KillArea" to="player" method="_on_kill_area_in_death_area"]
