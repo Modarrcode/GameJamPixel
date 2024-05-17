@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bv6phmuut3751"]
+[gd_scene load_steps=7 format=3 uid="uid://bv6phmuut3751"]
 
 [ext_resource type="PackedScene" uid="uid://bway00g0kh8ko" path="res://Scenes/Collectable.tscn" id="1_e64ua"]
 [ext_resource type="PackedScene" uid="uid://so2ve33ai575" path="res://Scenes/isotest.tscn" id="1_svkxu"]
 [ext_resource type="PackedScene" uid="uid://cjwv35xl0mnw1" path="res://Scenes/Player.tscn" id="2_u2uij"]
 [ext_resource type="PackedScene" uid="uid://cb6d6snc86wso" path="res://Scenes/UI.tscn" id="4_xiorm"]
 [ext_resource type="PackedScene" uid="uid://dglsefrsuyojj" path="res://Scenes/kill_area.tscn" id="5_w5v1u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c3w15"]
+radius = 29.0689
 
 [node name="Node2D" type="Node2D"]
 
@@ -57,6 +60,12 @@ respawnCoordinates = Vector2(600, 355)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KillArea"]
 position = Vector2(16, -4)
 polygon = PackedVector2Array(640, 245, 427, 350, 439, 366, 627, 468, 854, 353, 634, 239, 651, 203, 949, 351, 601, 528, 287, 383, 650, 203)
+
+[node name="TestArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestArea"]
+position = Vector2(629, 381)
+shape = SubResource("CircleShape2D_c3w15")
 
 [connection signal="collected" from="Area2D" to="Node2D2" method="_on_area_2d_collected"]
 [connection signal="collected" from="Area2D2" to="Node2D2" method="_on_area_2d_collected"]

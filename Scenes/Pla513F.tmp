@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cjwv35xl0mnw1"]
+[gd_scene load_steps=8 format=3 uid="uid://cjwv35xl0mnw1"]
 
 [ext_resource type="Script" path="res://Scripts/CharacterBody2D.gd" id="1_dcgq5"]
 [ext_resource type="Texture2D" uid="uid://daynv5v1spm18" path="res://sprites/Player.png" id="2_dsxx2"]
@@ -54,13 +54,9 @@ tracks/0/keys = {
 "values": [Vector2i(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_b4eab"]
-resource_name = "dying"
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nhapg"]
 _data = {
 "RESET": SubResource("Animation_m0nh4"),
-"dying": SubResource("Animation_b4eab"),
 "player_idle": SubResource("Animation_byp7i"),
 "run": SubResource("Animation_oo2rs")
 }
