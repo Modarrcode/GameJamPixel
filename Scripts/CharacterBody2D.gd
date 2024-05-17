@@ -51,6 +51,7 @@ func jump():
 #signals
 func _on_kill_area_in_death_area():
 	dying = true;
+	animationPlayer.stop()
 	sprite.modulate = Color.RED
 	await get_tree().create_timer(1).timeout
 	sprite.modulate = Color.WHITE
